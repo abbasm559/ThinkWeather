@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="#bfbfbf"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date and Time"
+        android:textColor="#bfbfbf"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="75"
+            android:textColor="#cfcfcf"
+            android:textSize="70sp" />
+
+        <TextView
+            android:id="@+id/units"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="99dp"
+            android:text="°C"
+            android:textColor="#cfcfcf"
+            android:textSize="70sp" />
+
+        <RadioGroup
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/fahrenheit"
+                android:text="°F"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:id="@+id/centigrade"
+                android:text="°C"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/conditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conditions"
+        android:textColor="#FF4081"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/refreshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#24096b"
+        android:text="Refresh"
+        android:textColor="#ffffff" />
+
+</LinearLayout>
