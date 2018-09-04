@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.real.thinkers.thinkweather.models.Weather;
@@ -16,6 +17,8 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     Button refreshButton;
+    String cityName;
+    EditText inputCity;
     TextView city, date, temperature, conditions;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

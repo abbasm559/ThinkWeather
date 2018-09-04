@@ -6,10 +6,12 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:padding="8dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/city"
+        android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="City"
@@ -18,6 +20,7 @@
 
     <TextView
         android:id="@+id/date"
+        android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Date and Time"
@@ -25,6 +28,7 @@
         android:textSize="20sp" />
 
     <LinearLayout
+        android:padding="8dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,6 +36,7 @@
 
         <TextView
             android:id="@+id/temperature"
+            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="75"
@@ -43,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="99dp"
-            android:text="°C"
+            android:text="°F"
             android:textColor="#cfcfcf"
             android:textSize="70sp" />
 
@@ -72,8 +77,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Conditions"
+        android:padding="8dp"
         android:textColor="#FF4081"
         android:textSize="25sp" />
+    <LinearLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:text="Input yout city: "
+        android:layout_width="0dp"
+        android:textSize="20sp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:hint="city name here"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/refreshButton"
