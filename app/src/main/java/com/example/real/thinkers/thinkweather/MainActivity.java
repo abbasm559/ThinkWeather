@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private String TAG = "MainActivity";
     Button refreshButton;
     String cityName;
+    String url;
     EditText inputCity;
     TextView city, date, temperature, conditions;
     @Override
@@ -30,12 +31,16 @@ public class MainActivity extends AppCompatActivity {
         date =  findViewById(R.id.date);
         temperature =  findViewById(R.id.temperature);
         conditions =  findViewById(R.id.conditions);
+        inputCity = findViewById(R.id.editTextInput);
 
 
         refreshButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        cityName=inputCity.getText().toString();
+                        url = "yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+cityName
+                                +"%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
                         change();
                     }
                 }
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void change() {
-        WeatherApiInterface.Factory.getInstance().getWeather().enqueue(new Callback<Weather>() {
+        WeatherApiInterface.Factory.getInstance().getWeather(url).enqueue(new Callback<Weather>() {
             @Override
             public void onResponse(Call<Weather> call, Response<Weather> response) {
                 temperature.setText(response.body().getQuery().getResults().getChannel().getItem().getCondition().getTemp());
@@ -57,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
                 date.setText(response.body().getQuery().getResults().getChannel().getLastBuildDate());
                 conditions.setText(response.body().getQuery().getResults().getChannel().getItem().getCondition().getText());
             }
-
             @Override
             public void onFailure(Call<Weather> call, Throwable t) {
                 Log.e(TAG, t.getMessage());
