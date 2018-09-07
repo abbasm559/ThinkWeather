@@ -25,6 +25,7 @@ public class Forecast {
     @Expose
     private String text;
 
+
     /**
      * 
      * @return

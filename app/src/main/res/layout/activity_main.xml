@@ -6,42 +6,47 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="8dp"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_height="0dp">
     <TextView
         android:id="@+id/city"
-        android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:text="City"
         android:textColor="#bfbfbf"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/date"
-        android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:text="Date and Time"
         android:textColor="#bfbfbf"
         android:textSize="20sp" />
 
     <LinearLayout
-        android:padding="8dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <TextView
             android:id="@+id/temperature"
-            android:padding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="8dp"
             android:text="75"
             android:textColor="#cfcfcf"
-            android:textSize="70sp" />
+            android:textSize="50sp" />
 
         <TextView
             android:id="@+id/units"
@@ -50,23 +55,24 @@
             android:layout_marginEnd="99dp"
             android:text="°F"
             android:textColor="#cfcfcf"
-            android:textSize="70sp" />
+            android:textSize="50sp" />
 
         <RadioGroup
-            android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical">
+
             <RadioButton
                 android:id="@+id/fahrenheit"
-                android:text="°F"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="°F" />
 
             <RadioButton
                 android:id="@+id/centigrade"
-                android:text="°C"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="°C" />
 
         </RadioGroup>
 
@@ -76,26 +82,29 @@
         android:id="@+id/conditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Conditions"
         android:padding="8dp"
+        android:text="Conditions"
         android:textColor="#FF4081"
         android:textSize="25sp" />
+
     <LinearLayout
-        android:padding="8dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <TextView
-        android:text="Input yout city: "
-        android:layout_width="0dp"
-        android:textSize="20sp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:id="@+id/editTextInput"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:hint="city name here"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Input yout city: "
+            android:textSize="20sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="city name here" />
     </LinearLayout>
 
     <Button
@@ -103,7 +112,183 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#24096b"
-        android:text="Refresh"
+        android:text="Input"
         android:textColor="#ffffff" />
+
+    </LinearLayout>
+    <!--<HorizontalScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/nextDayImg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/nextDay1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/maxTempNextDay1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nextDay1"
+                android:text="MaxTemp" />
+
+            <TextView
+                android:id="@+id/minTempNextDay1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maxTempNextDay1"
+                android:text="MinTemp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/nextDayImg2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/nextDay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/maxTempNextDay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nextDay2"
+                android:text="MaxTemp" />
+
+            <TextView
+                android:id="@+id/minTempNextDay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maxTempNextDay2"
+                android:text="MinTemp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/nextDayImg3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/nextDay3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/maxTempNextDay3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nextDay3"
+                android:text="MaxTemp" />
+
+            <TextView
+                android:id="@+id/minTempNextDay3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maxTempNextDay3"
+                android:text="MinTemp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/nextDayImg4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/nextDay4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/maxTempNextDay4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nextDay4"
+                android:text="MaxTemp" />
+
+            <TextView
+                android:id="@+id/minTempNextDay4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maxTempNextDay4"
+                android:text="MinTemp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/nextDayImg5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/nextDay5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/maxTempNextDay5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nextDay5"
+                android:text="MaxTemp" />
+
+            <TextView
+                android:id="@+id/minTempNextDay5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maxTempNextDay5"
+                android:text="MinTemp" />
+        </RelativeLayout>
+        </LinearLayout>
+    </HorizontalScrollView>-->
 
 </LinearLayout>
