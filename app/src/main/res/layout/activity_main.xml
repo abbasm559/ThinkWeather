@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/gradient_bg"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="City"
-        android:textColor="#bfbfbf"
+        android:textColor="#ffffff"
         android:textSize="30sp" />
 
     <TextView
@@ -29,7 +30,7 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:text="Date and Time"
-        android:textColor="#bfbfbf"
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <LinearLayout

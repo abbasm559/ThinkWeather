@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         refreshButton = findViewById(R.id.refreshButton);
         city =findViewById(R.id.city);
         date =  findViewById(R.id.date);
@@ -53,10 +54,13 @@ public class MainActivity extends AppCompatActivity {
         radioCentigrde= findViewById(R.id.centigrade);
         unitsTv= findViewById(R.id.units);
 
+        change();
+
         autoCompleteTv=findViewById(R.id.autoCompleteTv);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,cities);
         autoCompleteTv.setAdapter(adapter);
         autoCompleteTv.setThreshold(1);
+
 
 
         //forecast data introducing--------------------------------------------
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         radioFahrenheit.setChecked(true);
+        radioCentigrde.setChecked(false);
         radioFahrenheit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -97,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                         url = "yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22"+cityName
                                 +"%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
                         change();
+                        refreshButton.setText("Refresh");
                     }}
                 }
         );
@@ -136,10 +142,9 @@ public class MainActivity extends AppCompatActivity {
                 conditions.setText(condition);
 
 
-
                 //forecast data set up-----------------------------------------
 
-               // nextDay1.setText(response.body().getQuery().getResults().getChannel().getItem().getForecast().lastIndexOf(0));
+               // nextDay1.setText(response.body().getQuery().getResults().getChannel().getItem().getForecast().IndexOf(0));
 
 
             }
