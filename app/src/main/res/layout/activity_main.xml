@@ -9,12 +9,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:gravity="center_horizontal"
-        android:layout_width="match_parent"
-        android:layout_weight="2"
-        android:orientation="vertical"
-        android:layout_height="0dp">
     <TextView
         android:id="@+id/city"
         android:layout_width="wrap_content"
@@ -116,7 +110,6 @@
         android:text="Input"
         android:textColor="#ffffff" />
 
-    </LinearLayout>
     <!--<HorizontalScrollView
         android:layout_weight="1"
         android:layout_width="match_parent"

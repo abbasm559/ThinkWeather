@@ -11,6 +11,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.real.thinkers.thinkweather.models.Weather;
 
@@ -33,11 +34,6 @@ public class MainActivity extends AppCompatActivity {
     RadioButton radioFahrenheit,radioCentigrde;
     AutoCompleteTextView autoCompleteTv;
     TextView city, date, temperature, conditions,unitsTv;
-    //forecast data---------------------------------------
-    /*TextView nextDay1, nextDay2, nextDay3,nextDay4, nextDay5;
-    TextView nextDay1Max, nextDay2Max, nextDay3Max, nextDay4Max, nextDay5Max;
-    TextView nextDay1Min, nextDay2Min, nextDay3Min, nextDay4Min, nextDay5Min;
-    ImageView nextDay1Img, nextDay2Img,nextDay3Img,nextDay4Img,nextDay5Img;*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,20 +58,6 @@ public class MainActivity extends AppCompatActivity {
         autoCompleteTv.setThreshold(1);
 
 
-
-        //forecast data introducing--------------------------------------------
-        /*nextDay1 = findViewById(R.id.nextDay1); nextDay1Max = findViewById(R.id.maxTempNextDay1);
-        nextDay2 = findViewById(R.id.nextDay2); nextDay2Max = findViewById(R.id.maxTempNextDay2);
-        nextDay3 = findViewById(R.id.nextDay3); nextDay3Max = findViewById(R.id.maxTempNextDay3);
-        nextDay4 = findViewById(R.id.nextDay4); nextDay4Max = findViewById(R.id.maxTempNextDay4);
-        nextDay5 = findViewById(R.id.nextDay5); nextDay5Max = findViewById(R.id.maxTempNextDay5);
-        nextDay1Min = findViewById(R.id.minTempNextDay1);   nextDay1Img = findViewById(R.id.nextDayImg1);
-        nextDay2Min = findViewById(R.id.minTempNextDay2);   nextDay2Img = findViewById(R.id.nextDayImg2);
-        nextDay3Min = findViewById(R.id.minTempNextDay3);   nextDay3Img = findViewById(R.id.nextDayImg3);
-        nextDay4Min = findViewById(R.id.minTempNextDay4);   nextDay4Img = findViewById(R.id.nextDayImg4);
-        nextDay5Min = findViewById(R.id.minTempNextDay5);   nextDay5Img = findViewById(R.id.nextDayImg5);*/
-
-
         radioFahrenheit.setChecked(true);
         radioCentigrde.setChecked(false);
         radioFahrenheit.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -90,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
                 change();
             }
         });
-
         refreshButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -140,11 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 city.setText(cityName);
                 date.setText(buildDate);
                 conditions.setText(condition);
-
-
-                //forecast data set up-----------------------------------------
-
-               // nextDay1.setText(response.body().getQuery().getResults().getChannel().getItem().getForecast().IndexOf(0));
 
 
             }
