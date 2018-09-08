@@ -9,7 +9,7 @@
     <string name="f">°F</string>
     <string name="c">°C</string>
     <string name="conditions">Conditions</string>
-    <string name="input_your_city">Input your city:</string>
+    <string name="input_your_city">Input your city: </string>
     <string name="city_name_here">City name here</string>
     <string name="input">Input</string>
 </resources>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@drawable/gradient_bg"
@@ -14,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="City"
+        android:text="@string/city"
         android:textColor="#ffffff"
         android:textSize="30sp" />
 
@@ -23,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Date and Time"
+        android:text="@string/date_and_time"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 
@@ -39,7 +38,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="75"
+            android:text="@string/_75"
             android:textColor="#cfcfcf"
             android:textSize="50sp" />
 
@@ -48,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="99dp"
-            android:text="°F"
+            android:text="@string/f"
             android:textColor="#cfcfcf"
             android:textSize="50sp" />
 
@@ -61,14 +60,13 @@
                 android:id="@+id/fahrenheit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="°F" />
+                android:text="@string/f" />
 
             <RadioButton
                 android:id="@+id/centigrade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="°C" />
-
+                android:text="@string/c" />
         </RadioGroup>
 
     </LinearLayout>
@@ -78,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Conditions"
+        android:text="@string/conditions"
         android:textColor="#FF4081"
         android:textSize="25sp" />
 
@@ -91,7 +89,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Input yout city: "
+            android:text="@string/input_your_city"
             android:textSize="20sp" />
 
         <AutoCompleteTextView
@@ -99,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="city name here" />
+            android:hint="@string/city_name_here" />
     </LinearLayout>
 
     <Button
@@ -107,7 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#24096b"
-        android:text="Input"
+        android:text="@string/input"
         android:textColor="#ffffff" />
 
     <!--<HorizontalScrollView
